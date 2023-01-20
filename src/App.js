@@ -3,9 +3,14 @@ import BookCreate from './components/BookCreate';
 function App() {
   const [books, setBooks] = useState([]);
   const handleCreateBook = (title) => {
-    console.log('新增一本書，叫做' + title);
+    const updatedBooks = [...books, title];
+    setBooks(updatedBooks);
   };
-  return <BookCreate onCreate={handleCreateBook} />;
+  return (
+    <div>
+      <BookCreate onCreate={handleCreateBook} />
+    </div>
+  );
 }
 
 export default App;

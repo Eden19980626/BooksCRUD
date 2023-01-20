@@ -21,7 +21,7 @@ function BookCreate({ onCreate }) {
           value={title}
           onChange={handleChange}
         />
-        <button className='btn'>新增書本</button>
+        <button className='btn btn-secondary'>新增書本</button>
       </form>
     </div>
   );
