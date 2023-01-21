@@ -9,9 +9,13 @@ function BookEdit({ book, onSubmit }) {
     onSubmit(book.id, title);
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <input className='input' value={title} onChange={handleChange} />
-      <button className='btn'>儲存</button>
+    <form onSubmit={handleSubmit} className='flex gap-2'>
+      <input
+        className='input input-primary'
+        value={title}
+        onChange={handleChange}
+      />
+      <button className='btn btn-primary'>儲存</button>
     </form>
   );
 }

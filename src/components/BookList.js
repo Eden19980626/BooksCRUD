@@ -5,6 +5,10 @@ function BookList({ books, onDelete, onEdit }) {
       <BookShow key={book.id} book={book} onDelete={onDelete} onEdit={onEdit} />
     );
   });
-  return <div>{renderedBooks}</div>;
+  return (
+    <div className='artboard-demo flex-row flex-wrap gap-5 p-10 m-10'>
+      {renderedBooks}
+    </div>
+  );
 }
 export default BookList;
