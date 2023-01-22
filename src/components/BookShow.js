@@ -1,8 +1,8 @@
-import { useState, useContext } from 'react';
-import BooksContext from '../context/books';
+import useBooksContext from '../hooks/use-books-context';
+import { useState } from 'react';
 import BookEdit from './BookEdit';
 function BookShow({ book }) {
-  const { deleteBookById } = useContext(BooksContext);
+  const { deleteBookById } = useBooksContext;
   const [showEdit, setShowEdit] = useState(false);
 
   function handleDeleteClick() {
@@ -26,15 +26,15 @@ function BookShow({ book }) {
   );
 
   return (
-    <div className='card w-96 bg-base-100 shadow-xl'>
+    <div className='shadow-xl card w-96 bg-base-100'>
       <figure className='px-10 pt-10'>
         <img
           src={`https://picsum.photos/seed/${book.id}/300/200`}
           alt='books'
-          className='rounded-xl border-2'
+          className='border-2 rounded-xl'
         />
       </figure>
-      <div className='card-body gap-10 items-center text-center'>
+      <div className='items-center gap-10 text-center card-body'>
         {content}
         <div className='btn-group'>
           <button className='btn btn-active' onClick={handleEditClick}>

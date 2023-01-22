@@ -1,8 +1,8 @@
-import { useState, useContext } from 'react';
-import BooksContext from '../context/books';
+import useBooksContext from '../hooks/use-books-context';
+import { useState } from 'react';
 function BookCreate() {
   const [title, setTitle] = useState('');
-  const { createBook } = useContext(BooksContext);
+  const { createBook } = useBooksContext;
   const handleChange = (e) => {
     setTitle(e.target.value);
   };
@@ -14,11 +14,11 @@ function BookCreate() {
 
   return (
     <div>
-      <form className='p-5 flex justify-center gap-3' onSubmit={handleSubmit}>
+      <form className='flex justify-center gap-3 p-5' onSubmit={handleSubmit}>
         <input
           type='text'
           placeholder='輸入想新增的書'
-          className='input w-full max-w-xs input-bordered'
+          className='w-full max-w-xs input input-bordered'
           value={title}
           onChange={handleChange}
         />
